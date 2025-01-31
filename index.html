@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Anthony.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="home-content">
+            <h1>Hi, I'm <span class="highlight">Iseghohi anthony</span></h1>
+            <p>A passionate web developer with a focus on creating beautiful and functional websites.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="profile.jpeg" alt="Profile Picture" class="profile-img">
+            <p>I am a full-stack developer with over 5 years of experience in building scalable and responsive web applications. I specialize in JavaScript, React, Node.js, and modern web technologies.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <i class="fab fa-html5"></i>
+                <p>HTML5</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-css3-alt"></i>
+                <p>CSS3</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-js"></i>
+                <p>JavaScript</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-react"></i>
+                <p>React</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-node"></i>
+                <p>Node.js</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-git"></i>
+                <p>Git</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                
+                <h3>Project 1</h3>
+                <p>A responsive e-commerce website built with React and Node.js.</p>
+                
+            </div>
+            <div class="project-card">
+               
+                <h3>Project 2</h3>
+                <p>A portfolio website with modern animations and design.</p>
+                
+            </div>
+            <div class="project-card">
+                
+                <h3>Project 3</h3>
+                <p>A task management app built with MERN stack.</p>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Iseghohi anthony. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com/tonystar913 "><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
