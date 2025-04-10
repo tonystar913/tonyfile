@@ -1,0 +1,123 @@
+trash2cash_app/
+├── lib/
+│   ├── main.dart
+│   ├── models/
+│   │   └── waste_model.dart
+│   ├── screens/
+│   │   ├── login_screen.dart
+│   │   ├── home_screen.dart
+│   │   ├── sell_waste_screen.dart
+│   │   └── pickup_screen.dart
+│   ├── services/
+│   │   ├── auth_service.dart
+│   │   ├── firestore_service.dart
+│   │   └── payment_service.dart
+│   └── widgets/
+│       └── waste_card.dart
+├── assets/
+├── test/
+import 'package:flutter/material.dart';
+import 'screens/login_screen.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Trash2Cash',
+      theme: ThemeData(primarySwatch: Colors.green),
+      home: LoginScreen(),
+    );
+  }
+}import 'package:flutter/material.dart';
+
+class LoginScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text("Login Screen - Implement OTP Login Here"),
+      ),
+    );
+  }
+}import 'package:flutter/material.dart';
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Trash2Cash")),
+      body: Center(child: Text("Welcome to Trash2Cash")),
+    );
+  }
+}import 'package:flutter/material.dart';
+
+class SellWasteScreen extends StatefulWidget {
+  @override
+  _SellWasteScreenState createState() => _SellWasteScreenState();
+}
+
+class _SellWasteScreenState extends State<SellWasteScreen> {
+  String selectedType = 'Plastic';
+  double weight = 0.0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Sell Waste')),
+      body: Column(
+        children: [
+          DropdownButton<String>(
+            value: selectedType,
+            items: ['Plastic', Metal', 'Paper']
+                .map((type) => DropdownMenuItem(value: type, child: Text(type)))
+                .toList(),
+            onChanged: (value) => setState(() => selectedType = value!),
+          ),
+          TextField(
+            keyboardType: TextInputType.number,
+            onChanged: (val) => weight = double.tryParse(val) ?? 0.0,
+            decoration: InputDecoration(labelText: 'Weight (kg)'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              // Call Firebase function here
+              print("Waste submitted: $selectedType, $weight kg");
+            },
+            child: Text('Request Pickup'),
+          )
+        ],
+      ),
+    );
+  }
+}
+class Waste {
+  final String type;
+  final double weight;
+  final String imageUrl;
+
+  Waste({required this.type, required this.weight, required this.imageUrl});
+}import 'package:flutter/material.dart';
+
+class WasteCard extends StatelessWidget {
+  final String type;
+  final double weight;
+
+  WasteCard({required this.type, required this.weight});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: ListTile(
+        title: Text("Type: $type"),
+        subtitle: Text("Weight: ${weight.toStringAsFixed(2)} kg"),
+      ),
+    );
+  }
+}
+// Firebase Auth logic (OTP login) will go here
+// Firestore interaction for waste data will go here
+// Integrate Paystack or Flutterwave here
